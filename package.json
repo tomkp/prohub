@@ -4,7 +4,7 @@
   "main": "app/index.js",
   "scripts": {
     "start": "node app/index.js",
-    "watch": "npm run watch-css & npm run watch-js & npm run server",
+    "watch": "npm run watch-css & npm run watch-js & npm run start",
     "bundle-css": "stylus ./app/styles/index.styl -o ./app/assets/css",
     "watch-css": "stylus -w ./app/styles/index.styl -o ./app/assets/css",
     "bundle-js": "browserify ./app/client.js > ./app/assets/js/index.js",
