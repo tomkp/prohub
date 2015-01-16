@@ -10,9 +10,11 @@ ENV prohub_githubSecret secret
 WORKDIR /opt/app
 EXPOSE 8080
 VOLUME ["/opt/app/cachedb", "/opt/app/db"]
-CMD ["node", "app/index.js"]
+CMD ["npm", "run", "start"]
 
 COPY package.json /tmp/package.json
 RUN cd /tmp && npm install --production && cp -R node_modules /opt/app/
 
 ADD . /opt/app/
+
+RUN npm run bundle-css && npm run bundle-js
