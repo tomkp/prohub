@@ -8,13 +8,6 @@ Working, but a work in progress.
 ![screenshot](/docs/screenshot2.png)
 Grey bar indicates a date timeline from the beginning of the project to the end of the project. The Blue bar is the progress of total milestones closed towards completion.
 
-# GitHub Configuration
-
-You will need to register a new application under your account or organization.
-The client ID and secret created during that process is what is used in the 
-configuration of this application. The callback url is going to be 
-`//host:port/callback`.
-
 # HOW TO RUN
 Watches css and javascript for changes so you don't need to restart.
 ```bash
@@ -65,9 +58,15 @@ We highly recommend that you proxy the connection to the application via nginx
 with SSL. Just be sure to set your baseURL to the external URL, as well as the 
 callback URL in the github application configuration.
 
-# EXAMPLE CONFIG
+# CONFIGURATION
+You will need to register a new application under your account or organization.
+The client ID and secret created during that process is what is used in the 
+configuration of this application. The callback url is going to be 
+`//host:port/callback`.
 
-## .prohubrc
+## EXAMPLE RC FILE
+
+### .prohubrc
 You can place your [`rc`](github.com/dominictarr/rc) file where ever you want.
 `local` or `production` sections are used based on the value of the `NODE_ENV`
 environment variable.
