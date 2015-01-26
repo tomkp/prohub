@@ -15,11 +15,20 @@ The client ID and secret created during that process is what is used in the
 configuration of this application. The callback url is going to be 
 `//host:port/callback`.
 
-# RUN
-### START IN DEVELOPER MODE
+# HOW TO RUN
 Watches css and javascript for changes so you don't need to restart.
 ```bash
 npm run watch
+```
+
+Build the CSS and HTML but dont start
+```bash
+npm run bundle
+```
+
+Just start the app without bundling anything
+```bash
+npm start
 ```
 
 # DOCKER 
