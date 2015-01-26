@@ -6,6 +6,7 @@ Working, but a work in progress.
 
 ![screenshot](/docs/screenshot1.png)
 ![screenshot](/docs/screenshot2.png)
+Grey bar indicates a date timeline from the beginning of the project to the end of the project. The Blue bar is the progress of total milestones closed towards completion.
 
 # GitHub Configuration
 
