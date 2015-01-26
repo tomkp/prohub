@@ -3,6 +3,7 @@ var domready = require('domready');
 var reconnect = require('reconnect-engine');
 var linestream = require('./linestream');
 
+
 domready(function() {
 
   var match = paramify(document.location.pathname);
@@ -11,19 +12,14 @@ domready(function() {
     linestream(stream); // split the stream on new lines and emit json
 
     if (match('/home') || match('/'))
-      return require('home/client')(stream);
+      return require('home/client')(stream, match);
 
     if (match('/project/:id'))
-      return require('project/client')(stream);
+      return require('project/client')(stream, match);
 
   });
 
   con.connect('/server');
-
-  //
-  // TODO
-  // handle UI events for disconnect/reconnect here.
-  //
 
 });
 
