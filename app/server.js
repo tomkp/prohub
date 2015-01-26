@@ -1,7 +1,6 @@
 var http = require('http');
 var engine = require('engine.io-stream');
 var split = require('split');
-var parse = require('through-parse');
 var github = require('gh');
 var ecstatic = require('ecstatic');
 
@@ -22,7 +21,7 @@ module.exports = function(events, requests) {
       }
     }
 
-    for (i in requests) {
+    for (var i in requests) {
       if (requests[i].test(req, res))  {
         return requests[i].handler(req, res);
       }
@@ -60,8 +59,10 @@ module.exports = function(events, requests) {
       }
 
       stream
-        .pipe(split())
-        .pipe(parse())
+        .on('error', function(err) {
+          console.error(err)
+        })
+        .pipe(split(JSON.parse))
         .on('data', function(data) {
           for(i in events) {
             if (events[i].test(stream, data, token)) {
